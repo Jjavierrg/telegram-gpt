@@ -1,5 +1,6 @@
 node_modules
 build
 .vscode
-.idea
+.env
 coverage
+docs

@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "prestart": "tsc",
+    "dev": "nodemon src/index.ts",
     "start": "node build/index.js",
     "build": "npm run lint && npm test && tsc",
     "lint": "eslint . --ext .ts",
@@ -17,14 +17,14 @@
     "test": "jest --verbose",
     "test:watch": "npm t -- --watchAll",
     "test:coverage": "npm t -- --coverage",
-    "docs:generate": "rm -rf docs && typedoc src/ --out docs"
+    "docs:generate": "rimraf docs && typedoc src/ --out docs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jjavierrg/telegram-gpt.git"
   },
   "keywords": [],
-  "author": "Ulises Santana <ulisesantana@gmail.com>",
+  "author": "José Javier Rodríguez Gallego <jjavierrg@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jjavierrg/telegram-gpt/issues"
@@ -33,7 +33,6 @@
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "@types/node": "^18.15.12",
-    "@types/node-telegram-bot-api": "^0.61.6",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "eslint": "^8.38.0",
@@ -44,13 +43,16 @@
     "husky": "^8.0.3",
     "jest": "^29.5.0",
     "lint-staged": "^13.2.1",
+    "nodemon": "^2.0.22",
+    "rimraf": "^5.0.0",
     "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
     "typedoc": "^0.24.4",
     "typedoc-plugin-markdown": "^3.15.1",
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.61.0",
+    "grammy": "^1.15.3",
     "openai": "^3.2.1"
   }
 }
